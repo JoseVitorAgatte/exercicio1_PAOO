@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form [formGroup]="form">
+    <div>
+      <div>
+        <label for="nomeCurso">Nome do curso:</label>
+        <input id="nome" formControlName="nomeCurso" type="text" >
+      </div>
+
+      <div>
+        <label for="cargaCurso">Carga horária:</label>
+        <input id="carga" formControlName="cargaCurso" type="text" >
+      </div>
+
+      <div>
+        <button onclick="adicionarCurso()">Adicionar</button>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
+
+
