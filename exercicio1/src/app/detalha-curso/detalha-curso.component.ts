@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Curso } from '../classes/Curso';
+
 
 @Component({
   selector: 'app-detalha-curso',
@@ -9,8 +9,13 @@ import { Curso } from '../classes/Curso';
 })
 export class DetalhaCursoComponent implements OnInit {
 
-  public form: FormGroup;
-  public curso: Curso;
+  public formCurso: FormGroup;
+
+
+  nome: string;
+  cargaHoraria: string;
+  @Output() nomes: string[] = [];
+  @Output() cargasHorarias: string[] = [];
 
   constructor( private formBuilder: FormBuilder) { }
 
@@ -19,7 +24,7 @@ export class DetalhaCursoComponent implements OnInit {
   }
 
   criarForm(){
-    this.form = this.formBuilder.group({
+    this.formCurso = this.formBuilder.group({
       nomeCurso: [null],
       cargaCurso: [null]
     }
@@ -28,9 +33,14 @@ export class DetalhaCursoComponent implements OnInit {
 
 
   adicionarCurso(){
-    let curso = new Curso();
-    curso.nome = this.form.get('nomeCurso').value;
-    curso.cargaHoraria = this.form.get('cargaCurso').value;
+    this.nome = this.formCurso.get('nomeCurso').value;
+    this.cargaHoraria = this.formCurso.get('cargaCurso').value;
+
+    this.nomes.push(this.nome);
+    this.cargasHorarias.push(this.cargaHoraria);
+
+    console.log(this.nomes)
+    console.log(this.cargasHorarias)
   }
 
 }

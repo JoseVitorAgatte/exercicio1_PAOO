@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetalhaCursoComponent } from './detalha-curso.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListaCursoModule } from '../lista-curso/lista-curso.module';
 
 
 
@@ -10,9 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ListaCursoModule
   ],
   providers: [],
   bootstrap: [DetalhaCursoComponent],
+  exports: [DetalhaCursoComponent]
 })
 export class DetalhaCursoModule { }

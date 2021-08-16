@@ -1,25 +1,34 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <form [formGroup]="form">
+
+  <form [formGroup]="formCurso">
     <div>
       <div>
         <label for="nomeCurso">Nome do curso:</label>
-        <input id="nome" formControlName="nomeCurso" type="text" >
+        <input id="nome" formControlName="nomeCurso" type="text">
       </div>
 
       <div>
         <label for="cargaCurso">Carga horária:</label>
-        <input id="carga" formControlName="cargaCurso" type="text" >
+        <input id="carga" formControlName="cargaCurso" type="text">
       </div>
 
       <div>
-        <button onclick="adicionarCurso()">Adicionar</button>
+        <button (click)="adicionarCurso()">Adicionar</button>
       </div>
     </div>
-  </form>
-</body>
 
-</html>
+  </form>
+
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{nome}}</h5>
+      <p class="card-text">{{cargaHoraria}}</p>
+
+    </div>
+  </div>
+
+
+  <app-lista-curso [nomes]='nomes' [cargasHorarias]='cargasHorarias'></app-lista-curso>
+
 
 
