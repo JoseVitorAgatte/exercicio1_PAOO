@@ -1,34 +1,32 @@
-
-  <form [formGroup]="formCurso">
-    <div>
-      <div>
-        <label for="nomeCurso">Nome do curso:</label>
-        <input id="nome" formControlName="nomeCurso" type="text">
-      </div>
-
-      <div>
-        <label for="cargaCurso">Carga horária:</label>
-        <input id="carga" formControlName="cargaCurso" type="text">
-      </div>
-
-      <div>
-        <button (click)="adicionarCurso()">Adicionar</button>
-      </div>
+<form [formGroup]="formCurso">
+  <div class="barra-lateral">
+    <div class="col-md-6">
+      <label for="nomeCurso">Nome do curso:</label>
+      <input class="input-group-text" id="nome" formControlName="nomeCurso" type="text">
     </div>
+    <br>
+    <div class="col-md-6">
+      <label for="cargaCurso">Carga horária:</label>
+      <input class="input-group-text" id="carga" formControlName="cargaCurso" type="text">
+    </div>
+    <br>
+    <div>
+      <button class="btn btn-primary" (click)="adicionarCurso()">Adicionar</button>
+    </div>
+  </div>
+</form>
 
-  </form>
+<br>
 
-
+<div class="barra-lateral">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{nome}}</h5>
       <p class="card-text">{{cargaHoraria}}</p>
-
     </div>
   </div>
+</div>
 
+<br>
 
-  <app-lista-curso [nomes]='nomes' [cargasHorarias]='cargasHorarias'></app-lista-curso>
-
-
-
+<app-lista-curso [nomes]='nomes' [cargasHorarias]='cargasHorarias'></app-lista-curso>
